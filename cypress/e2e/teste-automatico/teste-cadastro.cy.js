@@ -68,7 +68,9 @@ context('Teste Cadastro', () => {
         cy.get('#formCustomerGroup > select-padrao > .custom > .ng-select-container > .ng-value-container > .ng-input > input')
             .type('Padrão{enter}', {force:true});
         cy.get('#buttonAddCustomerCategoryGroup').click({force:true}).wait(1000);
-        cy.get('#buttonCadastrarClienteEContinuarEditando').click({force:true});
+        cy.get('#buttonCadastrarClienteEContinuarEditando')
+            .wait(1000)
+            .click({force:true});
         cy.wait(10000);
         
         //Cadastro de informações no Cliente
@@ -192,13 +194,13 @@ context('Teste Cadastro', () => {
 
         //Cadastro de Mesa de Trabalho
         cy.visit('https://mastermilvusui.milvus.com.br/tickets/work-desks-list')
-        cy.get('.breadcrumb').should('include.text', 'Mesas de Trabalho')
-        cy.get('#btn-nova-mesa').click({force:true})
-        cy.get('.modal-body').should('include.text', 'Nome')
-        cy.get('#input-nome-mesa').type(randomPrimeiroNome, {force:true})
+        cy.get('.breadcrumb').should('include.text', 'Mesas de Trabalho').wait(500)
+        cy.get('#btn-nova-mesa').wait(500).click({force:true})
+        cy.get('.modal-body').should('include.text', 'Nome').wait(500)
+        cy.get('#input-nome-mesa').wait(500).type(randomPrimeiroNome, {force:true})
         cy.get('.col-12 > .form-group > select-padrao > .custom > .ng-select-container > .ng-value-container > .ng-input > input').type('Sem{enter}', {force:true})
         cy.get('#select-operador-mesa > .custom > .ng-select-container > .ng-value-container > .ng-input > input').type('Lucas{enter}', {force:true})
-        cy.get('#btn-adicionar-tecnico').click({force:true})
+        cy.get('#btn-adicionar-tecnico').click({force:true}).wait(500)
         cy.get('#btn-salvar-mesa').click({force:true})
 
 
