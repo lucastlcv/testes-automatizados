@@ -6,7 +6,6 @@ function gerarNumeroTelefoneFalso() {
   }
   return numero;
 }
-
   export { gerarNumeroTelefoneFalso };
 
 //Gerador de CPF
@@ -38,6 +37,15 @@ function gerarCPFFalsoValido() {
 
   return cpfFalsoValido;
 }
+  export { gerarCPFFalsoValido }
 
+// Função para obter a data atual no formato desejado (DD/MM/YYYY)
+function getCurrentDate() {
+  const today = new Date();
+  const day = today.getDate().toString().padStart(2, '0');
+  const month = (today.getMonth() + 1).toString().padStart(2, '0'); // Mês é base 0, então adicionamos 1
+  const year = today.getFullYear();
 
-export { gerarCPFFalsoValido }
+  return `${day}/${month}/${year}`;
+}
+  export { getCurrentDate }
