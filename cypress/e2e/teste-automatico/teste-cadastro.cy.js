@@ -100,7 +100,7 @@ context('Teste Cadastro', () => {
         cy.wait(1000)
         cy.get('#btn-convidar-usuario').click({force:true})
         cy.wait(500)
-        cy.get('#toast-container > .ng-trigger').should('include.text', 'CONVITE_ENVIADO')
+        cy.get('#toast-container > .ng-trigger').should('include.text', 'Convite enviado')
         
         //Cadastro Contato
         cy.get('#btn-adicionar-novo-contato').click({force:true})
