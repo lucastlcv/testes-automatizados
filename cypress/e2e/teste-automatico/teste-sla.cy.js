@@ -9,7 +9,7 @@ context('Teste SLA', () => {
         cy.get('.mb-3 > .input-group > .form-control')
             .type('lucas.carvalho1@teste.com', {force:true});
         cy.get(':nth-child(2) > .input-group > .form-control')
-            .type('1234', {force:true});
+            .type('318c0abE@', {force:true});
         cy.wait(1000);
         cy.get('.btn').click({force:true});
         cy.wait(5000);

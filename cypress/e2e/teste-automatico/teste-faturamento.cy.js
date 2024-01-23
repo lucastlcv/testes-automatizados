@@ -19,7 +19,7 @@ context('', () => {
         cy.get('.mb-3 > .input-group > .form-control')
             .type('lucas.carvalho1@teste.com', {force:true});
         cy.get(':nth-child(2) > .input-group > .form-control')
-            .type('1234', {force:true});
+            .type('318c0abE@', {force:true});
         cy.wait(1000);
         cy.get('.btn').click({force:true});
         cy.wait(5000);
@@ -50,19 +50,14 @@ context('', () => {
             .type('Dia 5{enter}', {force:true})
         cy.get(':nth-child(10) > .form-group > select-padrao > .custom > .ng-select-container > .ng-value-container > .ng-input > input')
             .click({force:true})
-            .type('2 dia{enter}', {force:true})
+            .type('10 dia{enter}', {force:true})
         cy.get(':nth-child(12) > .form-group > select-padrao.ng-star-inserted > .custom > .ng-select-container > .ng-value-container > .ng-input > input')
             .click({force:true})
             .type('Nota Fiscal e Boleto{enter}', {force:true}).wait(500)
         cy.get('.slider').click({force:true})
         cy.get(':nth-child(6) > .form-group > .form-control').select(0, {force:true})
         cy.get(':nth-child(7) > .form-group > .form-control').select(0, {force:true})
-        cy.get(':nth-child(8) > .form-group > .form-control').trigger('mousedown', { button: 0, force: true })
-            .trigger('mouseup', { button: 0, force: true })
-            .trigger('mousedown', { button: 0, force: true })
-            .trigger('mouseup', { button: 0, force: true })
-            .trigger('mousedown', { button: 0, force: true })
-            .trigger('mouseup', { button: 0, force: true })
+        cy.get(':nth-child(8) > .form-group > .form-control').click({force:true}).clear({force:true})
             .type('1000', {force:true});
         
             //Cobrança Horas
